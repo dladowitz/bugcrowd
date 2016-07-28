@@ -1,6 +1,6 @@
 class Tag < ActiveRecord::Base
   belongs_to :entity
-  validates :entity, presence: true
+  validates :entity, :name, presence: true
 
   scope :names, -> { uniq.pluck(:name) }
 end
