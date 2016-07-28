@@ -8,7 +8,6 @@ describe StatsController do
     entity2.create_tags(["book", "hiking"])
   end
 
-
   describe "#index" do
     subject { post :index,  format: :json }
     before  do

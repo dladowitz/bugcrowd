@@ -1,28 +1,21 @@
-== README
+## Bugcrowd Challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Routes
 
-Things you may want to cover:
+-  /tags (POST) 
+-  /tags/:entity_identifier (GET)
+-  /tags/:entity_identifier (DELETE)
+-  /stats (GET)
+-  /stats/:entity_identifier (GET)
 
-* Ruby version
+<hr>
+### URL Schema
+I decided that an entity_identifier would be unique accross entities. So this made it enough soley idenitfy an entity with. This simplied the URL schema. 
+<hr>
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Tests
+All modes and controllers have working RSpec tests. 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
