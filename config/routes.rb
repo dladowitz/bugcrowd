@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   post   '/tags/',                   to: 'tags#create'
   get    '/tags/:entity_identifier', to: 'tags#show'
   delete '/tags/:entity_identifier', to: 'tags#destroy'
+
+  get 'stats/',                      to: 'stats#index'
+  get 'stats/:entity_identifier',    to: 'stats#show'
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

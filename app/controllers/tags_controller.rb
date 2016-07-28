@@ -6,7 +6,7 @@ class TagsController < ApplicationController
     @entity = Entity.new(entity_identifier: params[:entity_identifier], entity_type: params[:entity_type])
 
     if @entity.save
-      params[:tags].each { |tag| @entity.tags.create(name: tag) }
+      @entity.create_tags params[:tags]
 
       render json: @entity, status: 201
     else
