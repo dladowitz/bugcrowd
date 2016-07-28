@@ -6,9 +6,7 @@ class TagsController < ApplicationController
     @entity = Entity.new(entity_identifier: params[:entity_identifier], entity_type: params[:entity_type])
 
     if @entity.save
-      params[:tags].each do |tag|
-        @entity.tags.create(name: tag)
-      end
+      params[:tags].each { |tag| @entity.tags.create(name: tag) }
 
       render json: @entity, status: 201
     else
@@ -19,6 +17,15 @@ class TagsController < ApplicationController
   def show
     if @entity
       render json: [entity: @entity, tags: @entity.tags]
+    else
+      render json: {error: "No Entity Found"}, stauts: 404
+    end
+  end
+
+  def destroy
+    if @entity
+      @entity.delete
+      head 204
     else
       render json: {error: "No Entity Found"}, stauts: 404
     end
